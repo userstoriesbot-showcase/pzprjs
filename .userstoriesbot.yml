@@ -1,0 +1,11 @@
+# Showcase fork only (never part of an upstream pull request).
+version: 1
+app:
+  install: "npm ci && npm run build"
+  start: python3 -m http.server {port} -d dist --bind 0.0.0.0
+  url: http://localhost:{port}
+  readyPath: /p.html
+  runtime: node24
+demo:
+  maxVideos: 1
+  beforePass: true
